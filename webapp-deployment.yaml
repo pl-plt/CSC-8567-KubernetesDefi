@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: webapp
-        image: xhelozs/csc8567:v1
+        image: gilzafire/django-site:v8
         resources:
           requests:
             memory: "100Mi"
@@ -24,5 +24,16 @@ spec:
           limits:
             memory: "200Mi"
             cpu: "200m"
+        env:
+        - name: DB_NAME
+          value: "AfterDB"
+        - name: DB_USER
+          value: "django"
+        - name: DB_PASSWORD
+          value: "django"
+        - name: DB_HOST
+          value: "cluterip-postgresql"
+        - name: DB_PORT
+          value: "5432"
         ports:
-        - containerPort: 5000
+        - containerPort: 8000

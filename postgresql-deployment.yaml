@@ -17,13 +17,12 @@ spec:
       containers:
       - name: postgresql
         image: postgres
-        ports :
+        ports:
         - containerPort: 5432
         env:
-        - name: POSTRGRES_DB
+        - name: POSTGRES_DB
           value: "AfterDB"
         - name: POSTGRES_USER
-          value:  "django"
-        - name: POSTRGRES_PASSWORD
           value: "django"
-        
+        - name: POSTGRES_PASSWORD
+          value: "django"
