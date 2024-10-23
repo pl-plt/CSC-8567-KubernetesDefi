@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: postgresql-deployment
+  labels:
+    app: postgresql
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: postgresql
+  template:
+    metadata:
+      labels:
+        app: postgresql
+    spec:
+      containers:
+      - name: postgresql
+        image: postgres
+        ports :
+        - containerPort: 5432
+        env:
+        - name: POSTRGRES_DB
+          value: "AfterDB"
+        - name: POSTGRES_USER
+          value:  "django"
+        - name: POSTRGRES_PASSWORD
+          value: "django"
+        
