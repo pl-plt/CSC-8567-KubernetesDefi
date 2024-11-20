@@ -1,22 +1,22 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: webapp-deployment
+  name: webapi-deployment
   labels:
-    app: webapp
+    app: webapi
 spec:
   replicas: 3
   selector:
     matchLabels:
-      app: webapp
+      app: webapi
   template:
     metadata:
       labels:
-        app: webapp
+        app: webapi
     spec:
       containers:
-      - name: webapp
-        image: gilzafire/django-site:v14
+      - name: webapi
+        image: gilzafire/django-api:v5
         resources:
           requests:
             memory: "100Mi"
@@ -36,6 +36,6 @@ spec:
         - name: DB_PORT
           value: "5432"
         - name: SHARD
-          value: "public"
+          value: "api"
         ports:
         - containerPort: 8000

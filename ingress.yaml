@@ -1,0 +1,31 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: django-ingress
+  namespace: u-qhjph
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: /
+spec:
+  rules:
+    - host: django.kukuctl.csc8567.luxbulb.org 
+      http:
+        paths:
+        - path: /
+          pathType: Prefix
+          backend:
+            service:
+              name: web-entry
+              port:
+                number: 80
+        - path: /api/
+          pathType: Prefix
+          backend:
+            service:
+              name: webapi-entry
+              port:
+                number: 81
+
+  tls:
+    - hosts:
+        - django.kukuctl.csc8567.luxbulb.org
+      secretName: tls-secret
