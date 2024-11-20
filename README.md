@@ -1,4 +1,7 @@
-# CSC-8567-KubernetesDefi
+# CSC-8567-
+
+### Defi 2
+![Schema Defi2](schémas/defi2.png)
 
 ### Defi 3
 
@@ -8,5 +11,12 @@ Le choix d'un pods pour une base de donnée est une mauvaise idées car si le po
 
 KubeDNS crée des entrées sur les ressources de type Service en utilisant le nom du Service, le namespace ou les informations des pods.
 
+![Schema Defi3](schémas/defi3.png)
+
 ### Defi 4
 
+![Schema Defi4](schémas/defi4.png)
+
+### Defi 5
+
+![Schema Defi5](schémas/defi5.png)
